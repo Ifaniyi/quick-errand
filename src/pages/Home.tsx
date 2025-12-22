@@ -1,6 +1,9 @@
 import Features from "../components/Features";
 import ServiceCards from "../components/ServiceCards";
 import ShopsInEstate from "../components/ShopsInEstate";
+import Riders from "../components/Riders";
+import Footer from "../components/Footer";
+
 
 export default function Home() {
   return (
@@ -42,6 +45,8 @@ export default function Home() {
       <Features />
       <ServiceCards />
       <ShopsInEstate />
+      <Riders />
+      <Footer />
 
     </>
   );
