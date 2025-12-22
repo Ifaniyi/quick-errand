@@ -1,4 +1,6 @@
 import Features from "../components/Features";
+import ServiceCards from "../components/ServiceCards";
+
 export default function Home() {
   return (
     <>
@@ -37,6 +39,7 @@ export default function Home() {
         </div>
       </section>
       <Features />
+      <ServiceCards />
 
     </>
   );
