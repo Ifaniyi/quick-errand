@@ -2,7 +2,7 @@ import { Store, Clock } from "lucide-react";
 
 const shops = [
   {
-    name: "Fresh Market",
+    name: "SuperMart",
     category: "Groceries",
     open: true,
   },
@@ -17,17 +17,17 @@ const shops = [
     open: true,
   },
   {
-    name: "Mini Mart",
+    name: "Mary Shine",
     category: "General",
     open: false,
   },
   {
-    name: "Estate Bakery",
+    name: "Beauty Gold",
     category: "Food",
     open: true,
   },
   {
-    name: "Corner Store",
+    name: "Smoke Shop",
     category: "General",
     open: true,
   },
