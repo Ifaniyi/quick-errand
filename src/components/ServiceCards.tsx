@@ -1,4 +1,5 @@
 import { Box, ShoppingCart, Link2, Truck } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function ServiceCards() {
   return (
@@ -63,6 +64,8 @@ function ServiceCard({
   subtitle: string;
   color: "purple" | "green" | "red" | "teal";
 }) {
+  const navigate = useNavigate();
+
   const styles = {
     purple: "hover:border-purple-400 hover:shadow-purple-100 bg-purple-500",
     green: "hover:border-green-400 hover:shadow-green-100 bg-green-500",
@@ -70,8 +73,13 @@ function ServiceCard({
     teal: "hover:border-teal-400 hover:shadow-teal-100 bg-teal-500",
   };
 
+  const handleClick = () => {
+    navigate(`/services/${title.toLowerCase()}`);
+  };
+
   return (
     <div
+      onClick={handleClick}
       className={`border border-slate-200 rounded-2xl p-8 text-center cursor-pointer
       transition-all duration-300 hover:-translate-y-1 hover:shadow-xl
       hover:border-2`}
