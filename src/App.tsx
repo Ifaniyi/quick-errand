@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Home";
+import Service from "./pages/Service";
 
 function App() {
   return (
@@ -8,14 +9,13 @@ function App() {
       <Header />
 
       <Routes>
-        {/* Public */}
+        {/* Home */}
         <Route path="/" element={<Home />} />
 
         {/* Services */}
-        <Route path="/services" element={<div>Services Page</div>} />
-        <Route path="/services/:type" element={<div>Service Details</div>} />
+        <Route path="/services/:service" element={<Service />} />
 
-        {/* Shops */}
+        {/* Shops (to build next) */}
         <Route path="/shops" element={<div>Shops In Estate</div>} />
         <Route path="/shops/:id" element={<div>Shop Details</div>} />
 
