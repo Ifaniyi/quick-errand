@@ -1,4 +1,5 @@
 import { Store, Clock } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const shops = [
   {
@@ -34,6 +35,8 @@ const shops = [
 ];
 
 export default function ShopsInEstate() {
+  const navigate = useNavigate();
+
   return (
     <section className="max-w-6xl mx-auto px-6 py-12">
       <h2 className="text-2xl font-semibold mb-6">
@@ -44,7 +47,10 @@ export default function ShopsInEstate() {
         {shops.map((shop, index) => (
           <div
             key={index}
-            className="flex items-center justify-between bg-white rounded-xl border border-gray-100 p-5 shadow-sm hover:shadow-md transition cursor-pointer"
+            onClick={() => navigate(`/shops/${index + 1}`)}
+            className="flex items-center justify-between bg-white rounded-xl
+            border border-gray-100 p-5 shadow-sm hover:shadow-md
+            transition cursor-pointer"
           >
             {/* Left */}
             <div className="flex items-center gap-4">

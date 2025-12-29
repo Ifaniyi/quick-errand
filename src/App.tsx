@@ -1,10 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-
 import Home from "./pages/Home";
 import Service from "./pages/Service";
 import Shops from "./pages/Shops";
 import ShopDetails from "./pages/ShopDetails";
+import Rider from "./pages/Rider";
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
         <Route path="/shops/:id" element={<ShopDetails />} />
 
         {/* Riders */}
-        <Route path="/riders/:id" element={<div>Rider Profile</div>} />
+        <Route path="/riders/:id" element={<Rider />} />
 
         {/* Auth */}
         <Route path="/login" element={<div>Login Page</div>} />
