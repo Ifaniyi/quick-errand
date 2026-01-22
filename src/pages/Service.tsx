@@ -1,8 +1,10 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { Box, ShoppingCart, Pill, Truck } from "lucide-react";
 
+type ServiceKey = "errands" | "groceries" | "pharmacy" | "deliveries";
+
 const serviceConfig: Record<
-  string,
+  ServiceKey,
   {
     title: string;
     description: string;
@@ -32,18 +34,22 @@ const serviceConfig: Record<
 };
 
 export default function Service() {
-  const { service } = useParams();
+  const { service } = useParams<{ service: ServiceKey }>();
   const navigate = useNavigate();
 
-  const currentService = service ? serviceConfig[service] : null;
-
-  if (!currentService) {
+  if (!service || !serviceConfig[service]) {
     return (
       <section className="min-h-screen flex items-center justify-center">
         <p className="text-slate-500">Service not found</p>
       </section>
     );
   }
+
+  const currentService = serviceConfig[service];
+
+  const handleContinue = () => {
+    navigate(`/where-to/${service}`);
+  };
 
   return (
     <section className="min-h-screen bg-slate-50 py-24">
@@ -63,7 +69,7 @@ export default function Service() {
           {currentService.description}
         </p>
 
-        {/* Card */}
+        {/* Action Card */}
         <div className="mt-12 p-10 bg-white rounded-2xl shadow-sm border">
           <p className="text-slate-600 mb-8">
             You’re about to request a{" "}
@@ -72,7 +78,7 @@ export default function Service() {
           </p>
 
           <button
-            onClick={() => navigate("/shops")}
+            onClick={handleContinue}
             className="px-8 py-3 rounded-xl bg-teal-600 text-white font-medium hover:bg-teal-700 transition"
           >
             Continue
