@@ -1,42 +1,15 @@
 import { Store, Clock } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 
 const shops = [
-  {
-    name: "SuperMart",
-    category: "Groceries",
-    open: true,
-  },
-  {
-    name: "Health Plus Pharmacy",
-    category: "Pharmacy",
-    open: true,
-  },
-  {
-    name: "Quick Snacks",
-    category: "Food",
-    open: true,
-  },
-  {
-    name: "Mary Shine",
-    category: "General",
-    open: false,
-  },
-  {
-    name: "Beauty Gold",
-    category: "Food",
-    open: true,
-  },
-  {
-    name: "Smoke Shop",
-    category: "General",
-    open: true,
-  },
+  { name: "SuperMart", category: "Groceries", open: true },
+  { name: "Health Plus Pharmacy", category: "Pharmacy", open: true },
+  { name: "Quick Snacks", category: "Food", open: true },
+  { name: "Mary Shine", category: "General", open: false },
+  { name: "Beauty Gold", category: "Food", open: true },
+  { name: "Smoke Shop", category: "General", open: true },
 ];
 
 export default function ShopsInEstate() {
-  const navigate = useNavigate();
-
   return (
     <section className="max-w-6xl mx-auto px-6 py-12">
       <h2 className="text-2xl font-semibold mb-6">
@@ -47,10 +20,8 @@ export default function ShopsInEstate() {
         {shops.map((shop, index) => (
           <div
             key={index}
-            onClick={() => navigate(`/shops/${index + 1}`)}
             className="flex items-center justify-between bg-white rounded-xl
-            border border-gray-100 p-5 shadow-sm hover:shadow-md
-            transition cursor-pointer"
+            border border-gray-100 p-5 shadow-sm"
           >
             {/* Left */}
             <div className="flex items-center gap-4">
@@ -59,12 +30,8 @@ export default function ShopsInEstate() {
               </div>
 
               <div>
-                <p className="font-medium text-gray-900">
-                  {shop.name}
-                </p>
-                <p className="text-sm text-gray-500">
-                  {shop.category}
-                </p>
+                <p className="font-medium text-gray-900">{shop.name}</p>
+                <p className="text-sm text-gray-500">{shop.category}</p>
               </div>
             </div>
 
