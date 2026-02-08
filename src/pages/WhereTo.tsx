@@ -24,7 +24,7 @@ export default function WhereTo() {
   return (
     <section className="min-h-screen bg-slate-50 py-24">
       <div className="max-w-xl mx-auto px-6">
-        
+
         <h1 className="text-3xl font-semibold text-slate-800 mb-2 capitalize">
           {service} request
         </h1>
@@ -72,7 +72,15 @@ export default function WhereTo() {
         {/* Continue */}
         <button
           disabled={!isValid}
-          onClick={() => navigate("/riders/1")}
+          onClick={() =>
+            navigate("/riders/1", {
+              state: {
+                location: deliveryLocation,
+                shop,
+                service,
+              },
+            })
+          }
           className={`w-full py-3 rounded-xl font-medium transition
             ${
               isValid
