@@ -1,65 +1,138 @@
-import Features from "../components/Features";
-import ServiceCards from "../components/ServiceCards";
-import Footer from "../components/Footer";
+import bikeImg from "../assets/bike.png";
+import errandsImg from "../assets/errand.png";
+import groceriesImg from "../assets/groceries.png";
+import pharmacyImg from "../assets/pharmacy.png";
+import deliveryImg from "../assets/delivery.png";
+
+
+
 
 export default function Home() {
   return (
-    <>
+    <main className="pt-32">
+
       {/* HERO SECTION */}
-      <section className="relative bg-gradient-to-b from-teal-700 to-teal-600 text-white">
-        <div className="max-w-5xl mx-auto px-6 py-28 text-center">
+      <section className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-          {/* Location pill */}
-          <span className="inline-block bg-white/20 backdrop-blur px-5 py-2 rounded-full text-sm mb-6">
-            Lagos Eti-Osa Estate Service
-          </span>
-
-          {/* Main heading */}
-          <h1 className="text-4xl md:text-5xl font-light leading-tight mb-4">
-            Run errands faster — right inside your estate
+        {/* LEFT */}
+        <div>
+          <h1 className="text-5xl font-semibold leading-tight">
+            Super Fast Delivery
+            <br />
+            <span className="text-slate-400">to your Doorstep</span>
           </h1>
 
-          {/* Subtitle */}
-          <p className="text-base md:text-lg text-white/90">
-            Request groceries, deliveries, and quick tasks from trusted runners near you.
+          <p className="text-slate-500 mt-4 max-w-md">
+            Get groceries, medicines or anything else from local shops,
+            delivered in minutes.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="mt-8 flex justify-center gap-4">
-            <a
-              href="/login"
-              className="bg-white text-teal-700 px-6 py-3 rounded-xl font-medium hover:bg-gray-100 transition"
-            >
-              Get Started
-            </a>
-
-            <a
-              href="/dashboard"
-              className="border border-white/40 px-6 py-3 rounded-xl hover:bg-white/10 transition"
-            >
-              View Dashboard
-            </a>
-          </div>
-        </div>
-
-        {/* Wave divider */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-          <svg
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-            className="w-full h-20"
+          <button
+            className="mt-8 bg-teal-600 text-white px-8 py-3 rounded-xl hover:bg-teal-700 transition"
           >
-            <path
-              d="M0,0V60c80,30,160,30,240,10s160-40,240-30,160,50,240,50,160-30,240-40,160,10,240,20V0Z"
-              fill="#ffffff"
-            />
-          </svg>
+            Get Started
+          </button>
         </div>
+
+        {/* RIGHT */}
+        <div className="flex justify-center">
+          <img
+            src={bikeImg}
+            alt="delivery bike"
+            className="w-full max-w-md"
+          />
+        </div>
+
       </section>
 
-      <Features />
-      <ServiceCards />
-      <Footer />
-    </>
+      {/* SERVICES CARDS */}
+      <section className="max-w-6xl mx-auto px-6 mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        {/* CARD */}
+        <div className="border rounded-2xl p-6 hover:shadow-lg transition">
+          <img src={errandsImg} className="w-14 mb-4" />
+          <h3 className="font-semibold">Errands</h3>
+          <p className="text-sm text-slate-500 mt-2">
+            Send us to pick up anything you need.
+          </p>
+        </div>
+
+        <div className="border rounded-2xl p-6 hover:shadow-lg transition">
+          <img src={groceriesImg} className="w-14 mb-4" />
+          <h3 className="font-semibold">Groceries</h3>
+          <p className="text-sm text-slate-500 mt-2">
+            Get fresh fruits, vegetables and more.
+          </p>
+        </div>
+
+        <div className="border rounded-2xl p-6 hover:shadow-lg transition">
+          <img src={pharmacyImg} className="w-14 mb-4" />
+          <h3 className="font-semibold">Pharmacy</h3>
+          <p className="text-sm text-slate-500 mt-2">
+            Order medicines from nearby pharmacies.
+          </p>
+        </div>
+
+        <div className="border rounded-2xl p-6 hover:shadow-lg transition">
+          <img src={deliveryImg} className="w-14 mb-4" />
+          <h3 className="font-semibold">Delivery</h3>
+          <p className="text-sm text-slate-500 mt-2">
+            Fast delivery from your favorite restaurants.
+          </p>
+        </div>
+
+      </section>
+
+      {/* HOW IT WORKS */}
+<section className="max-w-6xl mx-auto px-6 mt-24">
+
+  <h2 className="text-3xl font-semibold text-center mb-12">
+    How it works
+  </h2>
+
+  <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+    {/* Card 1 */}
+    <div className="bg-white p-6 rounded-xl text-center shadow-sm">
+      <img src={errandsImg} className="w-20 mx-auto mb-4" />
+      <h3 className="font-semibold mb-2">Place Request</h3>
+      <p className="text-slate-500 text-sm">
+        Tell us what you need delivered.
+      </p>
+    </div>
+
+    {/* Card 2 */}
+    <div className="bg-white p-6 rounded-xl text-center shadow-sm">
+      <img src={groceriesImg} className="w-20 mx-auto mb-4" />
+      <h3 className="font-semibold mb-2">We Pick Up</h3>
+      <p className="text-slate-500 text-sm">
+        Our riders collect your items.
+      </p>
+    </div>
+
+    {/* Card 3 */}
+    <div className="bg-white p-6 rounded-xl text-center shadow-sm">
+      <img src={pharmacyImg} className="w-20 mx-auto mb-4" />
+      <h3 className="font-semibold mb-2">Fast Delivery</h3>
+      <p className="text-slate-500 text-sm">
+        Items arrive in minutes.
+      </p>
+    </div>
+
+    {/* Card 4 */}
+    <div className="bg-white p-6 rounded-xl text-center shadow-sm">
+      <img src={deliveryImg} className="w-20 mx-auto mb-4" />
+      <h3 className="font-semibold mb-2">Enjoy</h3>
+      <p className="text-slate-500 text-sm">
+        Sit back and relax.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+    </main>
   );
 }
